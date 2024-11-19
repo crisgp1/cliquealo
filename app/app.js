@@ -12,6 +12,7 @@ const publicacionRoutes = require('./routes/publicacionRoutes');
 const ventasRoutes = require('./routes/ventasRoutes');
 const cors = require('cors');
 
+
 // Importar modelos para inicializar relaciones
 require('./models/index');
 
