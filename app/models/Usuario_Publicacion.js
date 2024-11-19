@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/basedatos');
 
 const UsuarioPublicacion = sequelize.define('UsuarioPublicacion', {
     id_usuario: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER.UNSIGNED,
         primaryKey: true,
         references: {
             model: 'usuarios',
@@ -11,7 +11,7 @@ const UsuarioPublicacion = sequelize.define('UsuarioPublicacion', {
         }
     },
     id_publicacion: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER.UNSIGNED,
         primaryKey: true,
         references: {
             model: 'publicacion',
@@ -20,7 +20,13 @@ const UsuarioPublicacion = sequelize.define('UsuarioPublicacion', {
     }
 }, {
     tableName: 'usuario_publicacion',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ['id_usuario', 'id_publicacion']
+        }
+    ]
 });
 
 module.exports = UsuarioPublicacion;

@@ -1,42 +1,42 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/basedatos');
 
 const Ventas = sequelize.define('Ventas', {
     id_venta: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true
     },
     id_publicacion: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: true,
         references: {
             model: 'publicacion',
             key: 'id_publicacion'
         }
     },
     id_usuario: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: true,
         references: {
             model: 'usuarios',
             key: 'id_usuario'
         }
     },
     monto: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull: false
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
     },
     fecha_venta: {
-        type: DataTypes.DATE,
-        allowNull: false
+        type: DataTypes.DATEONLY,
+        allowNull: true
     },
     tipo_venta: {
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     },
     id_credito: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER.UNSIGNED,
         allowNull: true,
         references: {
             model: 'credito',

@@ -1,49 +1,43 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-const Reserva = require('./Reserva');
-const Bancos = require('./Bancos');
+const sequelize = require('../config/basedatos');
 
 const Credito = sequelize.define('Credito', {
-  ID_Credito: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
-  ID_Usuario: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: Usuarios,
-      key: 'id'
+    id_credito: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    id_usuario: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: true,
+        references: {
+            model: 'usuarios',
+            key: 'id_usuario'
+        }
+    },
+    estado: {
+        type: DataTypes.STRING(100),
+        allowNull: true
+    },
+    fecha_credito: {
+        type: DataTypes.DATE,
+        allowNull: true
+    },
+    monto: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
+    },
+    id_banco: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: true,
+        references: {
+            model: 'bancos',
+            key: 'id_banco'
+        }
     }
-  },
-  Estado: {
-    type: DataTypes.STRING(100),
-        allowNull: false,
-        unique: true
-  },
-  Fecha_Credito: {
-    type: DataTypes.DATE,
-    allowNull: false
-  },
-  Monto: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false
-  },
-  id_banco: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: Bancos,
-      key: 'id'
-    }
-  },
-  
 }, {
-  tableName: 'Credito',
-  timestamps: true,
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+    tableName: 'credito',
+    timestamps: false
 });
 
 module.exports = Credito;

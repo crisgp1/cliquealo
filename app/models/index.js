@@ -1,11 +1,11 @@
-const Bancos = require('./models/Bancos');
-const Credito = require('./models/Credito');
-const DatosVendedor = require('./models/Datos_Vendedor');
-const Ofertas = require('./models/Ofertas');
-const Publicacion = require('./models/Publicacion');
-const UsuarioPublicacion = require('./models/Usuario_Publicacion');
-const Usuarios = require('./models/Usuarios');
-const Ventas = require('./models/Ventas');
+const Bancos = require('../models/Bancos');
+const Credito = require('../models/Credito');
+const DatosVendedor = require('../models/Datos_Vendedor');
+const Ofertas = require('../models/Ofertas');
+const Publicacion = require('../models/Publicacion');
+const UsuarioPublicacion = require('../models/Usuario_Publicacion');
+const Usuarios = require('../models/Usuarios');
+const Ventas = require('../models/Ventas');
 
 // Asociaciones para DatosVendedor
 DatosVendedor.belongsTo(Usuarios, {
@@ -114,3 +114,4 @@ module.exports = {
     Usuarios,
     Ventas
 };
+

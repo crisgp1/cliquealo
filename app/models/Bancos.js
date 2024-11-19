@@ -1,19 +1,18 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/basedatos');
 
 const Bancos = sequelize.define('Bancos', {
-    ID_Banco: {
-        type: DataTypes.INTEGER,
+    id_banco: {
+        type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true
     },
-    Nombre_Banco: {
+    nombre_banco: {
         type: DataTypes.STRING(100),
-        allowNull: false,
-        unique: true
-    },
+        allowNull: false
+    }
 }, {
-    tableName: 'Bancos',
+    tableName: 'bancos',
     timestamps: false
 });
 

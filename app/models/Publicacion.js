@@ -1,31 +1,40 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/basedatos');
 
 const Publicacion = sequelize.define('Publicacion', {
     id_publicacion: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true
     },
     titulo_publicacion: {
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     },
     marca: {
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     },
     autor: {
         type: DataTypes.STRING(50),
-        allowNull: false
+        allowNull: true
     },
     anio: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.DATEONLY,
+        allowNull: true,
+        get() {
+            const value = this.getDataValue('anio');
+            return value ? new Date(value).getFullYear() : null;
+        },
+        set(value) {
+            if (value) {
+                this.setDataValue('anio', new Date(value, 0, 1));
+            }
+        }
     },
     precio: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull: false
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
     },
     kilometraje: {
         type: DataTypes.DOUBLE,
@@ -37,7 +46,7 @@ const Publicacion = sequelize.define('Publicacion', {
     },
     modelo: {
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     }
 }, {
     tableName: 'publicacion',
