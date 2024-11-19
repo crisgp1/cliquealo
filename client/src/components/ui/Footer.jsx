@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, MapPin, Phone, Mail, S
 
 export function Footer() {
   return (
-    <footer className="bg-blue-700 text-white py-12 px-6">
+    <footer className="bg-azul-footer text-white py-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo */}
         <div className="col-span-1 md:col-span-2 lg:col-span-1">

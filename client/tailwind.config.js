@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'azul-footer': '#174C9B', // Color azul personalizado del footer
+      },
+    },
    
   },
   plugins: [],
