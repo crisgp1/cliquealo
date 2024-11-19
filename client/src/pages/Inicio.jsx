@@ -51,6 +51,14 @@ export function Inicio() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white">
+      {/* Imagen principal */}
+      <div className="container mx-auto px-4 mt-20">
+        <img
+          src="../src/assets/imagen inicio.png"
+          alt="Descripción de la imagen"
+          className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+        />
+      </div>
       {/* Carrousel Container */}
       <div className="relative overflow-hidden py-20">
         {/* First Row */}
