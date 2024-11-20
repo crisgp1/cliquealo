@@ -36,28 +36,19 @@ export function Inicio() {
     { icon: Laptop, color: "#1ABC9C" }
   ];
 
-  const iconRow2 = [
-    { icon: Layout, color: "#3498DB" },
-    { icon: Lightbulb, color: "#F39C12" },
-    { icon: Music, color: "#8E44AD" }, // Cambiado de MusicNote a Music
-    { icon: Palette, color: "#D35400" },
-    { icon: Camera, color: "#27AE60" },
-    { icon: Smartphone, color: "#C0392B" },
-    { icon: User, color: "#16A085" },
-    { icon: Video, color: "#2980B9" },
-    { icon: Zap, color: "#E74C3C" },
-    { icon: Layers, color: "#2C3E50" }
-  ];
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white">
-      {/* Imagen principal */}
-      <div className="container mx-auto px-4 mt-20">
-        <img
-          src="../src/assets/imagen inicio.png"
-          alt="Descripción de la imagen"
-          className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+    <main className="min-h-screen bg-white text-black">
+     {/* Imagen principal */}
+      <div className="w-full">
+       <img
+         src="../src/assets/imagen inicio.png"
+         alt="Descripción de la imagen"
+         className="w-full mx-auto shadow-lg"
         />
+        {/* Texto debajo de la imagen */}
+        <p className="text-black text-[25px] text-center mt-12">
+         Somos la mejor opción para que compres el auto de tus sueños
+        </p>
       </div>
       {/* Carrousel Container */}
       <div className="relative overflow-hidden py-20">
@@ -75,45 +66,6 @@ export function Inicio() {
               </div>
             );
           })}
-        </div>
-
-        {/* Second Row - Opposite Direction */}
-        <div className="flex animate-scroll-right mt-12">
-          {[...iconRow2, ...iconRow2].map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={`row2-${index}`}
-                className="flex items-center justify-center mx-8 transition-transform hover:scale-110"
-                style={{ minWidth: '100px' }}
-              >
-                <Icon size={40} color={item.color} />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Welcome Content */}
-      <div className="container mx-auto px-4 text-center mt-20">
-        <h1 className="text-6xl font-bold mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-400">
-            Cliquéalo
-          </span>
-        </h1>
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Descubre una nueva forma de interactuar con la tecnología y el diseño web moderno.
-        </p>
-        <div className="space-x-4">
-          <button className="px-8 py-3 bg-teal-500 hover:bg-teal-600 rounded-full 
-                           font-medium transition-all duration-300 transform hover:scale-105">
-            Explorar
-          </button>
-          <button className="px-8 py-3 bg-transparent border-2 border-purple-400 
-                           hover:bg-purple-400 rounded-full font-medium 
-                           transition-all duration-300 transform hover:scale-105">
-            Contactar
-          </button>
         </div>
       </div>
 
@@ -150,6 +102,33 @@ export function Inicio() {
           animation-play-state: paused;
         }
       `}</style>
+      <h1 className="text-black text-[25px] text-center mt-2 font-bold">
+       ¿Por qué con nosotros?
+      </h1>
+      <div className="space-y-4">
+          <div className="flex items-start">
+            <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white font-bold">!</span>
+            </div>
+            <p>Porque ofrecemos la mejor experiencia al momento de comprar tu vehículo.</p>
+          </div>
+          <div className="flex items-start">
+            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <p>Siempre encontrarás el vehículo a tu medida.</p>
+          </div>
+          <div className="flex items-start">
+            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+            </div>
+            <p>Selecciona la mejor propuesta de crédito a tus posibilidades y necesidades.</p>
+          </div>
+        </div>
     </main>
   );
 }

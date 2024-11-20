@@ -12,7 +12,6 @@ export function Footer() {
 
         {/* Links Column 1 */}
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold mb-4">Enlaces</h2>
           <nav className="flex flex-col space-y-3">
             <a href="#" className="hover:text-blue-200 transition-colors">
               Sobre nosotros
