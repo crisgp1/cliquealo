@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Car,
   Code,
   Coffee,
   Cpu,
@@ -7,19 +8,9 @@ import {
   Globe,
   Heart,
   Laptop,
-  Layout,
-  Lightbulb,
-  Music,
-  Palette,
-  Camera,
   Rocket,
-  Smartphone,
   Star,
   Terminal,
-  User,
-  Video,
-  Zap,
-  Layers
 } from 'lucide-react';
 
 export function Inicio() {
@@ -51,61 +42,71 @@ export function Inicio() {
         </p>
       </div>
       {/* Carrousel Container */}
-      <div className="relative overflow-hidden py-20">
-        {/* First Row */}
+      <div className="relative overflow-hidden py-20 mb-2">
         <div className="flex animate-scroll-left">
-          {[...iconRow1, ...iconRow1].map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={`row1-${index}`}
-                className="flex items-center justify-center mx-8 transition-transform hover:scale-110"
-                style={{ minWidth: '100px' }}
-              >
-                <Icon size={40} color={item.color} />
-              </div>
-            );
+         {[...iconRow1, ...iconRow1].map((item, index) => {
+         const Icon = item.icon;
+         return (
+          <div
+           key={`row1-${index}`}
+           className="flex items-center justify-center mx-8 transition-transform hover:scale-110"
+           style={{ minWidth: '100px' }}
+           >
+           <Icon size={40} color={item.color} />
+          </div>
+          );
           })}
         </div>
       </div>
 
-      {/* Custom Animations */}
-      <style jsx global>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
+     {/* Custom Animations */}
+     <style jsx global>{`
+     @keyframes scroll-left {
+     0% {
+      transform: translateX(0);
+     }
+     100% {
+      transform: translateX(-50%);
+     }
+     }
 
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
+      @keyframes scroll-right {
+     0% {
+      transform: translateX(-50%);
+     }
+     100% {
+      transform: translateX(0);
+     }
+     }
 
-        .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
-        }
+     .animate-scroll-left {
+     animation: scroll-left 30s linear infinite;
+     }
 
-        .animate-scroll-right {
-          animation: scroll-right 30s linear infinite;
-        }
+     .animate-scroll-right {
+     animation: scroll-right 30s linear infinite;
+     }
 
-        .animate-scroll-left:hover,
-        .animate-scroll-right:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-      <h1 className="text-black text-[25px] text-center mt-2 font-bold">
+     .animate-scroll-left:hover,
+     .animate-scroll-right:hover {
+     animation-play-state: paused;
+     }
+     `}</style>
+
+     <div className="flex flex-col justify-center items-center">
+     {/* Botón */}
+     <button className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-200 mb-2">
+       <span className="mr-2">EXPLORAR CATÁLOGO</span>
+       <Car size={20} />
+      </button>
+  
+     {/* Encabezado */}
+      <h1 className="text-black text-[25px] text-center mt-10 font-bold">
        ¿Por qué con nosotros?
       </h1>
-      <div className="space-y-4">
+     </div>
+
+      <div className="space-y-4 mt-10">
           <div className="flex items-start">
             <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
               <span className="text-white font-bold">!</span>
