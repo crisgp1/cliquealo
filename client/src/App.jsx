@@ -4,6 +4,7 @@ import { Inicio } from './pages/Inicio'
 import { Publicacion } from './pages/clientes/Publicacion'
 import { Header } from './components/ui/Header'
 import { Footer } from './components/ui/Footer'
+import { Login } from './pages/Login'
 
 export default function App () {
   return (
@@ -13,6 +14,7 @@ export default function App () {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/publicacion" element={<Publicacion />} />
+          <Route path="/Login" element={<Login/>} />
         </Routes>
       </div>
       <Footer />
